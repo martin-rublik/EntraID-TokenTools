@@ -87,10 +87,15 @@ function Get-TokenViaCode
 {
 	[cmdletbinding(ConfirmImpact = 'Low')]
 	param(
+				[Parameter(ValueFromPipeline = $false,Mandatory=$true)]
 				[string] $TenantID,
+				[Parameter(ValueFromPipeline = $false,Mandatory=$true)]
                 [string] $ClientID,
+				[Parameter(ValueFromPipeline = $false,Mandatory=$false)]
                 [string] $ClientSecret,
+				[Parameter(ValueFromPipeline = $false,Mandatory=$true)]
                 [string] $ReplyUrl,
+				[Parameter(ValueFromPipeline = $false,Mandatory=$false)]
                 [string[]] $Scopes=".default"
 	)
 

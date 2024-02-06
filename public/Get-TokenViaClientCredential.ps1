@@ -79,9 +79,13 @@ function Get-TokenViaClientCredential
 {
 	[cmdletbinding(ConfirmImpact = 'Low')]
 	param(
+				[Parameter(Mandatory=$true,ValueFromPipeline = $false)]
 				[string] $TenantID,
+				[Parameter(Mandatory=$true,ValueFromPipeline = $false)]
                 [string] $ClientID,
+				[Parameter(Mandatory=$true,ValueFromPipeline = $false)]
                 [string] $ClientSecret,
+				[Parameter(Mandatory=$false,ValueFromPipeline = $false)]
                 [string[]] $Scopes=".default"
 	)
 

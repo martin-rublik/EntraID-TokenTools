@@ -63,8 +63,10 @@ function Format-JWT
 {
     param(
     ## Text of an XML document.
-    [Parameter(ValueFromPipeline = $true)][string[]]$Text,
-    [Parameter()][switch]$AsJson
+    [Parameter(ValueFromPipeline = $true,Mandatory=$true)]
+	[string[]]$Text,
+	[Parameter(ValueFromPipeline = $false,Mandatory=$false)]
+    [switch]$AsJson
     )
     $parts=$Text.Split(".")
     if ($parts.Count -ne 3)
